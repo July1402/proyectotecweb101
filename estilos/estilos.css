@@ -1,21 +1,72 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header */
 .header {
-    background-color: #2c3e50;
+    background-color: #1e3a8a;
     color: white;
-    padding: 10px 20px;
+    padding: 2rem;
     text-align: center;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
 }
 
+.header-title {
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.search-form input {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 600px;
+    max-width: 100%;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Navigation Bar */
 .nav-bar {
     background-color: #34495e;
-    width: 50px; /* Contraída por defecto */
+    width: 50px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -25,7 +76,7 @@ body {
 }
 
 .nav-bar:hover {
-    width: 250px; /* Se expande al pasar el puntero */
+    width: 250px;
 }
 
 .nav-bar ul {
@@ -56,12 +107,11 @@ body {
 }
 
 .nav-bar ul li a span {
-    display: none; /* Ocultar texto */
+    display: none;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Mostrar el texto solo cuando esté expandido */
 .nav-bar:hover ul li a span {
     display: inline-block;
     opacity: 1;
@@ -72,58 +122,22 @@ body {
     margin-left: 50px;
     padding: 20px;
     transition: margin-left 0.3s ease;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-bar:hover ~ .main-container {
     margin-left: 250px;
 }
 
-.content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-/* Main Content */
-.main-container {
-    margin-left: 50px;
-    padding: 20px;
-    transition: margin-left 0.3s ease;
-    background-color: #ecf0f1; /* Fondo suave para el contenedor principal */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-}
-
-/* Estilos para el contenedor de imágenes */
-.image-box {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    border: 2px solid #ccc;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-/* Estilos para las imágenes dentro del contenedor */
-.image-box-item {
-    width: 30%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 /* Section Styles */
-
-div.content{
-    margin-right: 25%;
-}
-
 section {
     margin-bottom: 30px;
-    background-color: #ffffff; /* Fondo blanco para cada sección */
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
@@ -132,7 +146,7 @@ section h2 {
     margin-bottom: 10px;
 }
 
-section p {
+section p, section ul li {
     color: #7f8c8d;
     font-size: 16px;
     line-height: 1.6;
@@ -143,14 +157,25 @@ section ul {
     padding-left: 0;
 }
 
-section ul li {
-    padding: 8px 0;
-    font-size: 16px;
-    color: #34495e;
+/* Image Box */
+.image-box {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
-section ul li strong {
-    font-weight: bold;
+.image-box img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-box img:hover {
+    transform: scale(1.05);
 }
 
 /* Video Section */
@@ -162,7 +187,7 @@ section ul li strong {
     margin-top: 20px;
 }
 
-/* Aside (Form Section) */
+/* Contact Form Section */
 .contact-form-section {
     position: fixed;
     right: 0;
@@ -188,17 +213,11 @@ section ul li strong {
     gap: 15px;
 }
 
-.contact-form label {
-    font-size: 16px;
-    color: #34495e;
-}
-
 .contact-form input, .contact-form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    color: #34495e;
 }
 
 .contact-form button {
@@ -235,20 +254,11 @@ section ul li strong {
     font-weight: bold;
 }
 
-.contact-table a {
-    color: #2c3e50;
-    text-decoration: none;
-}
-
-.contact-table a:hover {
-    text-decoration: underline;
-}
-
-
 /* Footer */
 .footer {
     background-color: #2c3e50;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 1rem;
+    margin-top: 2rem;
 }
